@@ -1,0 +1,359 @@
+\chapter{THIẾT KẾ BỘ TRUYỀN BÁNH RĂNG TRỤ RĂNG NGHIÊNG TRONG HỘP GIẢM TỐC}
+    \section*{3.0. THÔNG SỐ KỸ THUẬT BỘ TRUYỀN BÁNH RĂNG TRỤ RĂNG NGHIÊNG}
+        \begin{itemize}
+            \item Công suất trục dẫn: $P_{II} = 2.86 (kW)$
+            \item Công suất trục bị dẫn: $P_{III} = 2.72 (kW)$
+            \item Momen xoắn trục dẫn: $T_{II} = 75.87 (N.m)$
+            \item Momen xoắn trục bị dẫn: $T_{III} = 360.78 (N.m)$
+            \item Số vòng quay trục dẫn: $n_{II} = 360 (vg/ph)$
+            \item Số vòng quay trục bị dẫn: $n_{III} = 72 (vg/ph)$
+            \item Tỷ số truyền:: $u_{23} = 5$
+            \item Thời gian làm việc: $L_h = 300 \cdot 8 \cdot 2 \cdot 5 = 24000 (h)$
+        \end{itemize}
+    \section{CHỌN VẬT LIỆU CHẾ TẠO BÁNH RĂNG, PHƯƠNG PHÁP NHIỆT LUYỆN, CƠ TÍNH VẬT LIỆU}
+        \subsection{Chọn vật liệu chế tạo bánh răng}
+            \hspace*{0.6cm}Ở đây ta dùng hộp giảm tốc (bộ truyền kín), được bôi trơn tốt thì dạng hỏng chủ yếu là tróc rỗ bề mặt răng. Vì thế ta tiến hành thiết kế theo độ bền tiếp xúc. \\
+            \hspace*{0.6cm}Theo Bảng 6.1, tài liệu tham khảo \cite{tltk1} Chọn thép C45 được tôi cải thiện có độ rắn đạt $HB = 241 \div 285$. \\
+            \begin{itemize}
+                \item Đối với bánh răng dẫn, ta chọn độ rắn trung bình ở cả mặt răng và lõi răng là $H_{1} = 250 HB$. 
+                \item Đối với bánh răng bị dẫn, theo mối quan hệ $H_1 \geq H_2 + (10 \div 15) HB$ ta chọn độ rắn trung bình ở cả mặt răng và lõi răng là $H_{2} = 235 HB$.
+            \end{itemize}
+        \subsection{Phương pháp nhiệt luyện và cơ tính vật liệu}
+            \hspace*{0.6cm}Theo bảng 6.1 tài liệu tham khảo \cite{tltk1}, giới hạn mỏi tiếp xúc các bánh răng được xác định như sau:
+            \begin{equation}
+                \sigma_{0Hlim} = 2HB + 70
+                \label{eq:3.1}
+            \end{equation}
+            \hspace*{0.6cm}Từ công thức \ref{eq:3.1}:
+            \[ 
+            \Rightarrow
+            \begin{cases}
+                \sigma_{Hlim1} = 2 \cdot 250 + 70 = 570 MPa\\
+                \sigma_{Hlim2} = 2 \cdot 235 + 70 = 540 MPa
+            \end{cases}
+            \]
+            \hspace*{0.6cm}Theo bảng 6.1 tài liệu tham khảo \cite{tltk1}, giới hạn uốn của các bánh răng được xác định như sau:
+            \begin{equation}
+                \sigma_{0Flim} = 1.8HB  
+                \label{eq:3.2}
+            \end{equation}
+            \hspace*{0.6cm}Từ công thức \ref{eq:3.2}:
+            \[ 
+            \Rightarrow
+            \begin{cases}
+                \sigma_{Flim1} = 1.8 \cdot 250 = 450 MPa\\
+                \sigma_{Flim2} = 1.8 \cdot 235 = 423 MPa
+            \end{cases}
+            \
+            \]
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|>{\centering\arraybackslash}m{4.8cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+                    \hline
+                    \diagbox{\textbf{Thông số}}{\textbf{Bánh răng}} & \textbf{Bánh dẫn} & \textbf{Bánh bị dẫn} \\ 
+                    \hline
+                    \textbf{Loại thép} & C45 & C45 \\
+                    \hline
+                    \textbf{Nhiệt luyện} & Tôi cải thiện & Tôi cải thiện \\
+                    \hline
+                    \textbf{Độ rắn} & $HB = 250$ & $HB = 235$ \\ 
+                    \hline
+                    \textbf{Giới hạn mỏi(MPA)} & $\sigma_{Hlim1} = 570$ & $\sigma_{Hlim2} = 540$ \\
+                    \hline
+                    \textbf{Giới hạn uốn(MPA)} & $\sigma_{Flim1} = 450$ & $\sigma_{Flim2} = 423$ \\
+                    \hline
+                \end{tabular}
+                \caption{Chọn vật liệu bánh răng}
+                \label{tab:gear_ratios}
+            \end{table}
+    \section{Xác định ứng suất tiếp xúc  $[\sigma_H]$ và ứng suất uốn cho phép $[\sigma_F]$}
+        \subsection{Số chu kỳ làm việc}
+            \begin{itemize}
+                \item Số chu kỳ thay đổi ứng suất tương đương:
+                    Vì bộ truyền chịu tải trọng tĩnh:
+                    \begin{equation}
+                        N_{HE} = N_{FE} = 60 \cdot c \cdot n \cdot L_h
+                        \label{eq:3.3}
+                    \end{equation}
+                    Từ công thức \ref{eq:3.3}:
+                    \begin{align*}
+                        N_{HE1} = N_{FE1} = 60 \cdot c \cdot n_{II} \cdot L_h = 60 \cdot 1 \cdot 360 \cdot 24000 = 5184 \cdot 10^5 \\
+                        N_{HE2} = N_{FE2} = 60 \cdot c \cdot n_{III} \cdot L_h = 60 \cdot 1 \cdot 72 \cdot 24000 = 10368 \cdot 10^4
+                    \end{align*}    
+                \item Số chu kỳ thay đổi ứng suất cơ sở:
+                    \begin{equation}
+                        N_{HO} = 30 \cdot HB^{2.4}
+                        \label{eq:3.4}
+                    \end{equation}
+                    Từ công thức \ref{eq:3.4}:
+                    \begin{align*}
+                        N_{HO1} = 30 \cdot H_{1}^{2.4} = 30 \cdot 250^{2.4} = 17067789.4 \\
+                        N_{HO2} = 30 \cdot H_{2}^{2.4} = 30 \cdot 235^{2.4} = 14712420.33 \\
+                    \end{align*}
+                    \begin{equation*}
+                        N_{FO_1} = N_{FO_2} = 4 \cdot 10^6
+                    \end{equation*}
+            \end{itemize}
+        \subsection{Ứng suất tiếp xúc cho phép}
+            \hspace*{0.6cm}Theo công thức 6.1a tài liệu tham khảo \cite{tltk1}, ứng suất tiếp xúc cho phép:
+            \begin{equation}
+                [\sigma_{H}] = \sigma_{0Hlim} \cdot \frac{K_{HL}}{s_{H}}
+                \label{eq:3.5}
+            \end{equation} 
+            \hspace*{0.6cm}Trong đó:
+            \begin{itemize}
+                \item Hệ số tuổi thọ $s_H = 1.1$ tra bảng 6.2 tài liệu tham khảo \cite{gtctm}.
+                \item Hệ số tuổi thọ xét đến thời gian phục vụ:
+                    \begin{equation}
+                        K_{HL} = \sqrt[m_H]{\frac{N_{HO}}{N_{HE}}}
+                        \label{eq:3.6}
+                    \end{equation}
+                    Trong đó $m_H = 6$ do độ rắn các mặt răng đều có $HB < 350$. Do $N_{HE1} > N_{HO1}$ và $N_{HE2} > N_{HO2}$. $\Rightarrow K_{HL1} = K_{HL2} = 1$\\
+                    
+            \end{itemize}
+            \hspace*{0.6cm}Từ công thức \ref{eq:3.5}:
+            \[
+            \Rightarrow
+            \begin{cases}
+                [\sigma_{H1}] = 570 \cdot \frac{1}{1.1} = 518.18 \, \mathrm{MPa} \\
+                [\sigma_{H2}] = 540 \cdot \frac{1}{1.1} = 490.91 \, \mathrm{MPa}
+            \end{cases}
+            \] 
+        \subsection{Ứng suất uốn cho phép}
+            \hspace*{0.6cm}Theo công thức 6.2a tài liệu tham khảo \cite{tltk1}, ứng suất tiếp xúc cho phép:
+            \begin{equation}
+                [\sigma_{F}] = \sigma_{0Flim} \cdot \frac{K_{FC} \cdot K_{FL}}{s_{F}}
+                \label{eq:3.7}
+            \end{equation} 
+            \hspace*{0.6cm}Trong đó:
+            \begin{itemize}
+                \item Hệ số tuổi thọ $s_F = 1.75$ tra bảng 6.2 tài liệu tham khảo \cite{gtctm}.
+                \item Hệ số xét đến ảnh hưởng đặt tải $K_{FC} = 1$ do đặt tải trọng 1 bên, bộ truyền quay một chiều.
+                \item Hệ số tuổi thọ xét đến chế độ tải trọng: 
+                    \begin{equation}
+                        K_{FL} = \sqrt[m_F]{\frac{N_{FO}}{N_{FE}}} 
+                        \label{eq:3.8}
+                    \end{equation}
+                    Trong đó $m_F = 6$ do độ rắn các mặt răng đều có $HB < 350$. Do $N_{FE1} > N_{FO1}$ và $N_{FE2} > N_{FO2}$. $\Rightarrow K_{FL1} = K_{FL2} = 1$\\
+            \end{itemize}
+            \hspace*{0.6cm}Từ công thức \ref{eq:3.7}:
+            \[
+            \Rightarrow
+            \begin{cases}
+                [\sigma_{F1}] = 450 \cdot \frac{1 \cdot 1}{1.75} = 257.14 \, \mathrm{MPa} \\
+                [\sigma_{F2}] = 423 \cdot \frac{1 \cdot 1}{1.75} =  241.71\, \mathrm{MPa}
+            \end{cases}
+            \] 
+    \section{TÍNH TOÁN BÁNH RĂNG THEO ĐỘ BỀN TIẾP XÚC}
+        \subsection{Chọn ứng suất tiếp xúc cho phép}
+            \hspace*{0.6cm}Theo công thức 6.12 tài liệu tham khảo \cite{tltk1}, ta có:
+            \begin{equation}
+                [\sigma_{H}] = \frac{[\sigma_{H1}] + [\sigma_{H2}]}{2} = \frac{518.18 + 490.91}{2} = 504.55 \, \mathrm{MPa}
+                \label{eq:3.9}
+            \end{equation}
+            \hspace*{0.6cm}Vì đây là bánh răng trụ nên $[\sigma_H] \leq 1.25[\sigma_{H1}] = 1.25 \cdot 490.91 = 613.64\, \mathrm{MPa}$ $\rightarrow$ \textbf{Thỏa điều kiện.}
+        \subsection{Xác định thông số cơ bản của bộ truyền}
+            \begin{equation}
+                a_w = K_a(u \pm 1)\sqrt[3]{\frac{T_{II}K_{H\beta}}{[\sigma_H]^2u\psi_{ba}}}
+                \label{eq:3.10}
+            \end{equation}
+            \hspace*{0.6cm}Trong đó:
+            \begin{itemize}
+                \item[--] $K_a$: Hệ số phụ thuộc vào vật liệu của cặp bánh răng và loại răng, chọn $K_a = 43$ \textit{theo bảng 6.5 trong tài liệu tham khảo \cite{tltk1} dành cho loại răng nghiêng với vật liệu bánh nhỏ và bánh lớn là thép - thép}
+                \item[--] $u$: Tỷ số truyền của hệ bánh răng, với hệ này $u_{23} = 8$
+                \item[--] $T_I$: Momen xoắn trên trục bánh chủ động, với hệ này $T_{II} = 56.9 N.m = 75.87 N.mm$
+                \item[--] $\psi_{ba}$: Vì vị trí bánh răng đối với các ổ trong hộp giảm tốc là đối xứng, và, $HB_1 = 280 \leq 350$ và $HB_2 = 270 \leq 350$, nên \textit{theo bảng 6.6 trong tài liệu tham khảo \cite{tltk1}} thì chọn $\psi_{ba} = 0.3$
+                \item[--] $\psi_{bd} = 0.53\psi_{ba}(u + 1) = 0.53 \cdot 0.3 \cdot (5 + 1) = 0.954$ 
+                \item[--] $K_{H\beta}$: Hệ số phân bố không đều tải trọng trên chiều rộng vành răng, với hệ này $HB_1 = 280 \leq 350$ và $HB_2 = 270 \leq 350$, hệ ứng với \textit{sơ đồ 6 thuộc bảng 6.7 trong tài liệu tham khảo \cite{tltk1}}, và $\psi_{bd} = 0.954$, nên $K_{H\beta} = 1.04$
+                \item[--] Vì đây là hệ bánh răng ăn khớp ngoài nên số hạng $(u \pm 1)$ sẽ được chuyển thành $(u + 1)$ 
+            \end{itemize}
+            $$a_w = 43.(5 + 1)\sqrt[3]{\frac{75870 \cdot 1.04}{504.55 ^2 \cdot 5 \cdot 0.3}} = 152.53 (mm)$$
+            \hspace*{0.6cm}Theo tiêu chuẩn SEV229-75, ta chọn $a_w = 160 mm$ 
+        \subsection{Chọn module $m$ theo khoảng cách trục $a_w$}
+            \hspace*{0.6cm}Vì $HB_1 = 250 \leq 350$ và $HB_2 = 235 \leq 350$, nên ta chọn môđun răng theo công thức 6.17 tài liệu tham khảo \cite{tltk1}:
+            \begin{equation}
+                m = (0,01 \div 0,02)a_w = (0,01 \div 0,02).160 = (1.6 \div 3.2) (mm)
+                \label{eq:3.11}
+            \end{equation}
+            \hspace*{0.6cm}Theo dãy tiêu chuẩn và dãy ưu tiên 1, chọn $m = 3$.
+        \subsection{Xác định số răng, góc nghiêng $\beta$ và hệ số dịch chỉnh x}
+            \begin{itemize}
+                \item Số răng bánh nhỏ từ công thức 6.31 tài liệu tham khảo \cite{tltk1}, ta có cách tính:
+                    \begin{equation}
+                        z_1 = \frac{2a_{w}\cos{\beta}}{m(u+1)} 
+                        \label{eq:3.12}
+                    \end{equation}
+                    \hspace*{0.6cm}Góc nghiêng $\beta$ của bánh răng nghiêng phải nằm trong khoảng $(8^o \div 20^o)$, nên dựa vào mối liên hệ trên, ta có:
+                    $$\frac{2a_wcos(20^o)}{m(u+1)} \leq z_1 \leq \frac{2a_wcos(8^o)}{m(u+1)}$$
+                    $$\frac{2 \cdot 160 \cdot cos(20^o)}{3 \cdot (5 + 1)} \leq z_1 \leq \frac{3 \cdot 160 \cdot cos(8^o)}{3 \cdot (5 + 1)}$$
+                    $$ 16.71 \leq z_1 \leq 17.6 $$
+                    \hspace*{0.6cm}Theo mối quan hệ trên, ta chọn được $z_1 = 17$ răng\\[0.2cm]
+                    \hspace*{0.6cm}Số răng bánh bị dẫn $z_2$ được tính theo công thức:
+                    \begin{equation}
+                        z_2 = u_{23}.z_1 = 5.17 = 85 \text{ răng}
+                        \label{eq:3.13}
+                    \end{equation}
+                \item Góc nghiêng răng $\beta$ được tính theo công thức 6.32 tài liệu tham khảo \cite{tltk1}:
+                    $$\beta = cos^{-1}(\frac{m(z_1 + z_2)}{2a_w}) = cos^{-1}(\frac{3 \cdot (17 + 85)}{2.160}) = 17.01^o \rightarrow \textbf{Thỏa điều kiện}$$
+                \item Chọn hệ số dịch chỉnh dựa theo bảng 6.9 tài liệu tham khảo \cite{tltk1}:\\
+                    Với $\beta = 17.01^o \rightarrow z_{min} = 15 \rightarrow z_1 \geq z_{min} + 2 = 15 + 2 = 17 \rightarrow x_1 = 0 \text{và} x_2 = 0.$ 
+            \end{itemize}
+        \subsection{Kích thước bộ truyền bánh răng}
+            \begin{itemize}
+                \item Đường kính vòng chia của bánh răng dẫn và bánh răng bị dẫn được tính theo công thức:
+                    \begin{gather*}
+                        d_1 = \frac{mz_1}{cos(\beta)} = \frac{3 \cdot 17}{cos(17.01^o)} = 53.33 (mm)  \\
+                        d_2 = 2 \cdot a_w - d_1 = 2 \cdot 160 - 53.33 = 266.67 (mm) 
+                    \end{gather*}
+                \item Đường kính vòng đỉnh của bánh răng dẫn và bánh răng bị dẫn được tính theo công thức:
+                    \begin{gather*}
+                        d_{a1} = d_1 + 2m = 53.33 + 2 \cdot 3 = 59.33  (mm)\\
+                        d_{a2} = d_2 + 2m = 266.67 + 2 \cdot 3 = 272.67 (mm)
+                    \end{gather*}
+                \item Đường kính đáy răng của bánh răng dẫn và bánh răng bị dẫn được tính theo công thức:
+                    \begin{gather*}
+                        d_{f1} = d_1 - 2.5m = 53.33 - 2.5 \cdot 3 = 45.83 (mm) \\
+                        d_{f2} = d_2 - 2.5m = 266.67 - 2.5 \cdot 3 = 259.17 (mm)
+                    \end{gather*}
+                \item Bề rộng bánh răng bị dẫn và bánh răng dẫn được tính theo công thức:
+                    \begin{gather*}
+                        B_2 = \psi_{ba} \cdot a_w = 0.3 \cdot 160 = 48 (mm)\\
+                        B_1 = B_2 + 5 = 53 (mm)
+                    \end{gather*}
+                \item Vận tốc vòng của bánh răng dẫn:
+            $$v = \frac{\pi d_1n_1}{60000} = \frac{\pi \cdot 53.33 \cdot 360}{60000} = 1 (m/s)$$
+            Theo \textit{bảng 6.13 trong tài liệu tham khảo \cite{tltk1}}, vì $v = 1 (m/s) \leq 4 (m/s)$ và hệ là bánh răng trụ răng nghiêng $\rightarrow$ Chọn cấp chính xác \textbf{9}
+            \end{itemize}
+        \section{KIỂM NGHIỆM RĂNG VỀ ĐỘ BỀN TIẾP XÚC}
+            \hspace*{0.6cm}Theo công thức 6.33 tài liệu tham khảo \cite{tltk1} ứng suất tiếp xúc xuất hiện trên mặt răng của bộ truyền phải thỏa mãn điều kiện sau:
+            \begin{equation}
+                \sigma_H = Z_MZ_HZ_\epsilon\sqrt{\frac{2T_1K_H(u \pm 1)}{b_wud^2_{w1}}} \leq [\sigma_H]
+                \label{eq:3.14}
+            \end{equation}
+            \hspace*{0.6cm}Trong đó:
+            \begin{itemize}
+                \item[] $Z_M$: Hệ số kể đến cơ tính vật liệu của các bánh răng ăn khớp, \textit{bảng 6.5 tài liệu tham khảo \cite{tltk1}}. Vì hệ có hai bánh răng được làm bằng thép-thép nên $Z_M = 274 (MPa^{1/3})$  
+                \item[] $Z_H$: Hệ số kể đến hình dạng bề mặt tiếp xúc
+                    $$Z_H = \sqrt{\frac{2cos(\beta_b)}{sin(2\alpha_{tw})}}$$
+                    Với 
+                    \begin{itemize}
+                        \item [--] $\beta_b$: Góc nghiêng của răng trên hình trụ cơ sở
+                        $$tg(\beta_b) = cos(\alpha_t)tg(\beta)$$
+                        \item [--] Với bánh răng nghiêng không dịch chỉnh $a_{tw} = a_t = \arctan{\frac{\tan{\alpha}}{\cos{\beta}}}$ \\
+                        $\rightarrow$ Với $\alpha = 20^o \text{ và } \beta = 17.01^o$, ta có $\alpha_{tw} = \alpha_t = 20.84^o \text{ và } \beta_b = 17.01^o$\\
+                        $$\Rightarrow Z_H = \sqrt{\frac{2.cos(17.01^o)}{sin(2.20.84^o)}} = 1.7$$ 
+                    \end{itemize}
+                \item[--] $\epsilon_\beta$: Hệ số trùng khớp dọc, tính theo công thức:
+                    $$\epsilon_\beta = \frac{b_wsin(\beta)}{m\pi} = \frac{a_w\psi_{ba}sin(\beta)}{m\pi} = \frac{160 \cdot 0.3 \cdot \sin{17.01^o}}{3 \cdot \pi} = 1.49$$
+                \item[] $\epsilon_\alpha$: Hệ số trùng khớp ngang, tính theo công thức:
+                    $$\epsilon_\alpha = [1.88 - 3.2(\frac{1}{z_1} + \frac{1}{z_2})]cos(\beta) = [1.88 - 3.2(\frac{1}{17} + \frac{1}{85})]cos(17.01^o) = 1.58$$
+                \item[] $Z_\epsilon$: Hệ số kể đến sự trùng khớp của răng, \textit{vì $\epsilon_\beta \geq 1$ nên sẽ có dạng của công thức 6.36c tài liệu tham khảo \cite{tltk1}}, được tính như sau:
+                    $$Z_{\epsilon} = \sqrt{\frac{1}{\epsilon_\alpha}} = \sqrt{\frac{1}{1.58}} = 0.79$$
+                \item[] $K_H$: Hệ số tải trọng khi tính về tiếp xúc, tính theo thức:
+                    $$K_H = K_{H\beta}K_{H\alpha}K_{Hv}$$
+                Trong đó
+                \begin{itemize}
+                    \item[--] $K_{H\beta} = 1.04$
+                    \item[--] $K_{H\alpha}$: Hệ số kể đến sự phân bố không đều tải trọng cho các đôi răng đồng thời ăn khớp, với bánh răng nghiêng \textit{tra bảng 6.14 tài liệu tham khảo \cite{tltk1}}. Vì $v = 1 (m/s) \leq 2.5 (m/s)$ và có cấp chính xác là \textbf{9}, nên $K_{H\alpha} = 1.13$.
+                    \item[--] $K_{Hv}$: Hệ số kể đến tải trọng động xuất hiện trong vùng ăn khớp. Tra \textit{bảng P2.3, Phụ lục, tài liệu tham khảo [2]}, vì là cặp bánh răng nghiêng có cấp chính xác \textbf{9}, độ rắn mặt răng \textbf{a} (vì $HB_1 = 250 \leq 350 \text{ và } HB_2 = 235 \leq 350$) và $v \approx 1 (m/s)$, nên $K_{Hv} = 1.01$
+                    $$\Rightarrow K_H = 1.04 \cdot 1.13 \cdot 1.01 = 1.19$$
+                \end{itemize}
+                \item Chiều rộng vành khăn $b_w$:
+                    $$b_w = B_{2} = 48 (mm)$$
+                \item[--] $d_{w1}$: Đường kính vòng lăn bánh nhỏ, được tính theo công thức:
+                    $$d_{w1} = K_d\sqrt[3]{\frac{T_1K_{H\beta}(u \pm 1)}{\psi_{bd}[\sigma_H]^2u}}$$
+                    Trong đó
+                    \begin{itemize}
+                        \item[+] $K_d$: Hệ số phụ thuộc vào góc ăn khớp, hệ số trùng khớp và vật liệu chế tạo bánh răng. \textit{Theo bảng 6.5 tài liệu tham khảo \cite{tltk1}}, vì hệ là loại răng nghiêng với vật liệu làm hai bánh răng là thép - thép nên $K_d = 67,5 (MPa^{1/3})$
+                        \item[+] $K_{H\beta}$: Hệ số tải trọng tính, $K_{H\beta} = 1.04$.
+                        \item[+] Vì đây là hệ bánh răng ăn khớp ngoài nên số hạng $(u \pm 1)$ sẽ được chuyển thành $(u + 1)$ 
+                        $$\Rightarrow d_{w1} = 67.5\sqrt[3]{\frac{75870 \cdot 1.04 \cdot (5 + 1)}{0.954 \cdot 504.55^2 \cdot 5}} = 49.38 (mm)$$
+                    \end{itemize} 
+            \end{itemize}
+        $$\Rightarrow \sigma_H = 274 \cdot 1.7 \cdot 0.79 \cdot\sqrt{\frac{2 \cdot 75870 \cdot 1.19 \cdot (5 + 1)}{48 \cdot 5 \cdot 49.38^2}} = 500.69 (MPa) < [\sigma_H] = 504.55 (MPa)$$
+        $\rightarrow \textbf{Thỏa mãn kiểm nghiệm theo độ bền tiếp xúc}$
+        \section{KIỂM NGHIỆM RĂNG VỀ ĐỘ BỀN UỐN}
+            \hspace*{0.6cm}Để đảm bảo độ bền uốn cho răng, ứng suất uốn sinh ra tại chân răng không được vượt quá một giá trị cho phép:
+            \begin{align*}
+                \sigma_{F1} & = \frac{2T_1K_FY_{\epsilon}Y_{\beta}Y_{F1}}{b_wd_{w1}m} \leq [\sigma_{F1}] \\
+                \sigma_{F2} & = \frac{\sigma_{F1}Y_{F2}}{Y_{F1}} \leq [\sigma_{F2}]
+            \end{align*}
+        Trong đó:
+        \begin{itemize}
+            \item[--] $T_1 = 75870 (N.mm)$: Momen xoắn trên bánh chủ động.
+            \item[--] $m = 3 (mm)$: Module pháp
+            \item[--] $b_w = \alpha_w\psi_{ba} = 160 \cdot 0.3 = 48 (mm)$: Chiều rộng vành răng.
+            \item[--] $d_{w1} = 49.38 (mm)$: Đường kính vòng lăn bánh chủ động.
+            \item[--] $Y_{\epsilon} = \frac{1}{\epsilon_\alpha} = \frac{1}{1.58} = 0.63$: Hệ số kể đến sự trùng khớp của răng.
+            \item[--] $Y_\beta$: Hệ số kể đến độ nghiêng của răng, được tính theo công thức:
+            $$Y_\beta = 1 - \frac{\beta}{140} = 1 - \frac{17.01}{140} = 0.88$$
+            \item[--] $Y_{F1}, Y_{F2}$: Hệ số dạng răng của bánh răng dẫn và bánh răng bị dẫn, phụ thuộc vào số răng tương đương được tính theo công thức:
+            \begin{align*}
+                z_{v1} & = \frac{z_1}{cos^3(\beta)} = \frac{17}{cos^3(17.01)} = 19.44\\
+                z_{v2} & = \frac{z_2}{cos^3(\beta)} = \frac{85}{cos^3(17.01)} = 97.2
+            \end{align*}
+            Từ đó, dựa vào \textit{Bảng 6.18 tài liệu tham khảo} \cite{tltk1}, với số răng tương đương $z_{v1} = 19.44$ và hệ số dịch chỉnh $x = 0$, ta có $Y_{F1} = 4.1$. Tương tự với bánh răng bị dẫn, ta có $Y_{F2} = 3.6$.
+            \item[--] $K_F$: Hệ số tải trọng khi tính về uốn, tính theo thức:
+            $$K_F = K_{F\beta}K_{F\alpha}K_{Fv}$$
+            Trong đó
+            \begin{itemize}
+                \item[+] $K_{F\beta}$: Hệ số kể đến sự phân bố không đều tải trọng trên chiều rộng vành răng khi tính về uốn, theo \textit{bảng 6.7 tài liệu tham khảo \cite{tltk1}} vì $\psi_{bd} = 0.954$ và hệ bánh răng tương ứng sơ đồ 6 nên $K_{F\beta} = 1.09$
+                \item[+] $K_{F\alpha}$: Hệ số kể đến sự phân bố không đều tải trọng cho các đôi răng đồng thời ăn khớp khi tính về uốn, với bánh răng nghiêng \textit{tra bảng 6.14 tài liệu tham khảo \cite{tltk1}}. Vì $v = 1(m/s) \leq 2.5 (m/s)$ và có cấp chính xác là \textbf{9}, nên, $K_{F\alpha} = 1.36$.
+                \item[+] $K_{Fv}$ : Hệ số kể đến tải trọng động xuất hiện trong vùng ăn khớp khi tính về uốn. Được tính theo công thức:
+                \begin{align*}
+                    K_{Fv} = 1 + \frac{v_Fb_wd_{w1}}{2T_1K_{F\beta}K_{F\alpha}}\\
+                    \text{với }
+                    v_F = \delta_Fg_ov\sqrt{\frac{a_w}{u}}
+                \end{align*}
+                Theo \textit{bảng 6.15 và 6.16 tài liệu tham khảo} \cite{tltk1}, ta có $\delta_F = 0,006$ và $g_o = 73$ vì hệ bánh răng có $HB_2 \leq 350 HB$ có dạng răng nghiêng, module $m = 3 (mm)$ và cấp chính xác 9.
+                $$v = \frac{{\pi}d_{w1}n_1}{60000} = \frac{\pi \cdot 49.38 \cdot 360}{60000} = 0.93 (m/s) $$
+                $$v_F = 0.006 \cdot 73 \cdot 0.93 \cdot \sqrt{\frac{160}{5}} = 2.3 (m/s) $$
+                $$K_{Fv} = 1 + \frac{2.3 \cdot 48 \cdot 49.38}{2 \cdot 75870 \cdot 1.09 \cdot 1.36} = 1.02$$
+                $$\Rightarrow K_F = 1.09 \cdot 1.36 \cdot 1.02 = 1.51$$
+            \end{itemize}
+            Từ các dữ liệu trên, ta có:
+            \begin{align*}
+            \sigma_{F1} & = \frac{2 \cdot 75870 \cdot 1.51 \cdot 0.63 \cdot 0.88 \cdot 4.1}{48 \cdot 49.38 \cdot 3} = 73.24 (MPa) & \leq [\sigma_{F1}] = 257.14 (MPa) \\
+            \sigma_{F2} & = \frac{73.24 \cdot 3.6}{4.1} = 64.31 (MPa) & \leq [\sigma_{F2}] = 241.71 (MPa)
+            \end{align*}    
+        \end{itemize}
+        $\Rightarrow$ \textbf{Thỏa mãn kiểm nghiệm theo độ bền uốn.}
+    \section{XÁC ĐỊNH CÁC GIÁ TRỊ LỰC TÁC DỤNG LÊN BỘ TRUYỀN}
+        \subsection{Lực vòng $F_t$}
+            \begin{equation*}
+                F_{t1} = F_{t2} = \frac{2 \cdot T_1 \cdot 10 ^3 \cdot \cos{\beta}}{m \cdot z_1} = \frac{2 \cdot 75.87 \cdot 10^3 \cdot \cos{17.01^\circ}}{3 \cdot 17} = 2845.14 \, \mathrm{N}
+            \end{equation*}
+        \subsection{Góc ăn khớp}
+            \hspace*{0.6cm}Vì vật liệu chế tạo bánh răng là thép $\Rightarrow \alpha_{nw} \approx \alpha_{tw} = 20.84^\circ$.
+        \subsection{Lực hướng tâm $F_r$}
+            \begin{equation*}
+                F_{r1} = F_{r2} = \frac{F_{t1} \cdot \tan{\alpha_{nw}}}{\cos{\beta}} = \frac{2845.14 \cdot \tan{20.84^\circ}}{\cos{17.01^\circ}} = 1132.59\, \mathrm{N}
+            \end{equation*}
+        \subsection{Lực dọc trục $F_a$}
+            \begin{equation*}
+                F_{a1} = F_{a2} = F_{t1} \cdot \tan{\beta} = 2845.14 \cdot \tan{17.01^\circ} = 870.39\, \mathrm{N}
+            \end{equation*}
+    \section{BẢNG THÔNG SỐ BỘ TRUYỀN BÁNH RĂNG TRỤ RĂNG NGHIÊNG}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|}
+                \hline
+                \textbf{Thông số} & \textbf{Bánh răng dẫn} & \textbf{Bánh răng bị dẫn} \\ \hline
+                Tỉ số truyền & \multicolumn{2}{c|}{$u_{23} = 5$} \\ \hline
+                Mômen xoắn (N.m) & \multicolumn{2}{c|}{$T_{II} = 75.87$} \\ \hline
+                Số vòng quay (vg/ph) & \multicolumn{2}{c|}{$n_{II} = 360$} \\ \hline
+                Khoảng cách trục (mm) & \multicolumn{2}{c|}{$a_w = 160$} \\ \hline
+                Module (mm) & \multicolumn{2}{c|}{$m = 3$} \\ \hline
+                Góc nghiêng răng ($^o$) & \multicolumn{2}{c|}{$\beta = 17.01$} \\ \hline
+                Góc ăn khớp ($^o$)& \multicolumn{2}{c|}{$a_{tw} = 20.84$} \\ \hline
+                Số răng bánh răng (răng) & $z_1 = 17$ & $z_2 = 85$ \\ \hline
+                Đường kính vòng chia (mm) & $d_1 = 53.33$ &  $d_1 = 266.67$ \\ \hline
+                Đường kính vòng đỉnh (mm) & $d_{a1} = 59.33$ &  $d_{a2} = 272.67$ \\ \hline
+                Đường kính vòng đáy (mm) & $d_{f1} = 45.33$ &  $d_{f2} = 259.17$ \\ \hline
+                Chiều rộng vành khăn (mm) & $B_1 = 53$ & $B_2 = 48$ \\ \hline
+                Vận tốc vòng (m/s) & \multicolumn{2}{c|}{$v = 1$} \\ \hline
+            \end{tabular}
+            \caption{Bảng thông số bộ truyền bánh răng trụ răng nghiêng}
+        \end{table}
+
+            
